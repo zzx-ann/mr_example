@@ -1,5 +1,7 @@
 xbl\fields\MinMaxCountTuple.class
+xbl\bagprg\bagprgtime.class
 xbl\distinct\DistinctReduce.class
+xbl\bagprg\bagprgtime$TidReduce.class
 xbl\distinct\CountMap.class
 xbl\UvCount\CountDistinct.class
 xbl\wordcount\hans_Reduce.class
@@ -11,10 +13,12 @@ xbl\distinct\DistinctCount.class
 xbl\fields\Age$AgeReduce.class
 xbl\distinct\DistinctMap.class
 xbl\fields\DistinctMap.class
+xbl\bagprg\bagprgtime$TidMap.class
 xbl\wordcount\hans_Map.class
 xbl\fields\DistinctReduce.class
 xbl\wordcount\WordCount.class
 xbl\fields\CountReduce.class
 xbl\UvCount\UvMap.class
+xbl\bagprg\baginfo.class
 xbl\fields\DistinctCount.class
 xbl\UvCount\UvReduce.class
