@@ -8,7 +8,33 @@ import java.io.IOException;
 import org.apache.hadoop.io.Writable;
 
 public class baginfo implements Writable {
-    private int id;
+    private Long uid;
+    public Long getUid() {
+        return uid;
+    }
+
+    public void setUid(Long uid) {
+        this.uid = uid;
+    }
+
+
+
+    public void readFields(DataInput in) throws IOException {
+        uid = in.readLong();
+
+    }
+
+    public void write(DataOutput out) throws IOException {
+        out.writeLong(uid);
+    }
+
+    @Override
+    public String toString() {
+        return ""+uid;
+    }
+
+
+  /*  private int id;
     private Long uid;
     private int tm;
     private int devtype;
@@ -88,25 +114,30 @@ public class baginfo implements Writable {
         this.Sum = Sum;
     }
 
+    *//* 是把输入流字节反序列化*//*
     public void readFields(DataInput in) throws IOException {
 
-        tid = in.readLine();
-        gid = in.readLine();
-        info = in.readLine();
+       *//* tid = in.readUTF();
+        gid = in.readUTF();
+        deviceid = in.readUTF();
+        info = in.readUTF();
+        udid = in.readUTF(); *//*
+
         uid = in.readLong();
-        udid = in.readLine();
-        deviceid = in.readLine();
+
         //prg = in.readLine();
         //time = in.readInt();
     }
 
+    *//* 是把每个对象序列化到输出流*//*
     public void write(DataOutput out) throws IOException {
-        out.writeChars(info);
-        out.writeChars(tid);
-        out.writeChars(gid);
+       *//* out.writeUTF(info);
+        out.writeUTF(tid);
+        out.writeUTF(gid);
+        out.writeUTF(udid);
+        out.writeUTF(deviceid);*//*
+
         out.writeLong(uid);
-        out.writeChars(udid);
-        out.writeChars(deviceid);
         //out.writeChars(prg);
        // out.writeInt(time);
     }
@@ -115,5 +146,5 @@ public class baginfo implements Writable {
     public String toString() {
         System.out.println(Long.toString(uid) + "| udid:"+udid+"|deviceid"+deviceid+"|gid:"+gid+"|info:"+info);
         return uid + "\t" + udid  + "\t" + deviceid +  "\t" + gid + "\t" + info;
-    }
+    }*/
 }

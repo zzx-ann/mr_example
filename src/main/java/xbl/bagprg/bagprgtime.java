@@ -62,16 +62,18 @@ public class bagprgtime {
                     String gid = (splits[10]);
 
                     String info = "aaa";
-                    if(null !=  splits[15] ){
+/*                    if(null !=  splits[15] && "" != splits[15] ){
                         info = splits[15];
-                    }
 
-                    outTuple.setudid(udid);
+                    }*/
+
+                    /*outTuple.setudid(udid);
                     outTuple.setdeviceid(deviceid);
                     outTuple.setuid(uid);
                     outTuple.settid(tid);
                     outTuple.setgid(gid);
-                    outTuple.setinfo(info);
+                    outTuple.setinfo(info);*/
+                    outTuple.setUid(uid);
                     keys.set(tid);
 
 
@@ -85,12 +87,13 @@ public class bagprgtime {
                     context.write(keys, outTuple);
                 }else{
                     keys.set("other");
-                    outTuple.setudid("default");
+                  /*  outTuple.setudid("default");
                     outTuple.setdeviceid("default");
                     outTuple.setuid(0L);
                     outTuple.settid("0");
                     outTuple.setgid("0");
-                    outTuple.setinfo("default");
+                    outTuple.setinfo("default");*/
+                    outTuple.setUid(0L);
                     System.out.println("keys:" + keys + "|" + outTuple);
                     context.write(keys, outTuple);
                    /* outTuple.setMin(min);
@@ -108,12 +111,12 @@ public class bagprgtime {
 
         public void reduce(Text key, Iterable<baginfo> values, Context context) throws IOException, InterruptedException {
             int sum = 0;
-            result.setTidCount(0);
+/*            result.setTidCount(0);
             for (baginfo tmp : values) {
 
                 sum += tmp.getCount();
             }
-            result.setSum(sum);
+            result.setSum(sum);*/
             context.write(key, result);
         }
     }
