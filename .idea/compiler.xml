@@ -6,10 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="WordCount" />
+        <module name="my_MapReduce" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="my_MapReduce" target="1.5" />
       <module name="WordCount" target="1.5" />
     </bytecodeTargetLevel>
   </component>
